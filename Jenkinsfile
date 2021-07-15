@@ -34,9 +34,11 @@ pipeline {
                 expression { holiday == true }
             }
             steps{
+                script{
                 def nameArray = jsonData.response.holidays.name
                 nameArray.each { name ->
                     writeFile file: '${name}.txt', text: 'testing purpose'
+                }
                 }
             }
     }
