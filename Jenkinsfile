@@ -1,8 +1,8 @@
 pipeline {
     agent any
     environment{
-        // today = sh(returnStdout:true, script: 'date +%Y-%m-%d').trim()
-        today = '2021-01-01'
+        today = sh(returnStdout:true, script: 'date +%Y-%m-%d').trim()
+        //today = '2021-01-01'
         currentYear = sh(returnStdout:true, script: 'date +%Y').trim()
         holiday = false
         jsonData = ""
