@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment{
         //Getting Current Date using Linux date command
-        today = sh(returnStdout:true, script: 'date +%Y-%m-%d').trim()
-        //today = '2021-01-01'
+        //today = sh(returnStdout:true, script: 'date +%Y-%m-%d').trim()
+        today = '2021-01-01'
         //Getting Current year using Linux date command
         currentYear = sh(returnStdout:true, script: 'date +%Y').trim()
         holiday = false
