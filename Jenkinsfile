@@ -143,9 +143,9 @@ pipeline {
     }
     }
      post { 
-        always { 
+        //always { 
             //Clearing out the workspace at the end of the pipeline
-            cleanWs()
+           // cleanWs()
         }
         success {
             //Sends email if the result of pipeline is succcesful
