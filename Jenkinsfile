@@ -2,8 +2,8 @@ pipeline {
     agent any
     environment{
         //Getting Current Date using Linux date command
-        //today = sh(returnStdout:true, script: 'date +%Y-%m-%d').trim()
-        today = '2021-01-01'
+        today = sh(returnStdout:true, script: 'date +%Y-%m-%d').trim()
+        //today = '2021-01-01'
         //Getting Current year using Linux date command
         currentYear = sh(returnStdout:true, script: 'date +%Y').trim()
         holiday = false
@@ -143,10 +143,10 @@ pipeline {
     }
     }
      post { 
-       // always { 
+        always { 
             //Clearing out the workspace at the end of the pipeline
-        //    cleanWs()
-        //}
+            cleanWs()
+        }
         success {
             //Sends email if the result of pipeline is succcesful
                     emailext body: 'Jenkins Job ${JOB_NAME} executed Successfully', subject: 'Jenkins Success Notification', to: env.Success_Email
