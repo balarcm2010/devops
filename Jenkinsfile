@@ -143,10 +143,10 @@ pipeline {
     }
     }
      post { 
-         always { 
+        /* always { 
             //Clearing out the workspace at the end of the pipeline
             cleanWs()
-         } 
+         } */
         success {
             //Sends email if the result of pipeline is succcesful
                     emailext body: 'Jenkins Job ${JOB_NAME} executed Successfully', subject: 'Jenkins Success Notification', to: env.Success_Email
